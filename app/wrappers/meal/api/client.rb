@@ -3,8 +3,24 @@ module Meal
     class Client
       BASE_URL = "https://www.themealdb.com".freeze
       
+      def letter_list(letter)
+        send_request(:get, "/api/json/v2/9973533/search.php?f=#{letter}")
+      end
+
+      def category_list
+        send_request(:get, "/api/json/v2/9973533/categories.php")
+      end
+      
+      def meal_category(category)
+        send_request(:get, "/api/json/v2/9973533/filter.php?c=#{category}")
+      end
+
+      def random_meals
+        send_request(:get, "/api/json/v2/9973533/randomselection.php")
+      end
+
       def meal_details(id)
-        send_request(:get, "/api/json/v2/9973533/search.php?f=#{id}")
+        send_request(:get, "/api/json/v2/9973533/lookup.php?i=#{id}")
       end
 
       private

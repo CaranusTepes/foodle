@@ -1,3 +1,19 @@
-<% @details.each do |detail| %>
-  <h1><%= detail[1][2]["strInstructions"]%></h1>
+<% @letterlist.each do |letterlist| %>
+  <h1><%=link_to letterlist[1][2]["strMeal"] %></h1>
+  <p><%= letterlist[1][2]["strInstructions"]%></p>
+  <%= image_tag letterlist[1][2]["strMealThumb"]+"/preview"%>
+
+  <h1><%= letterlist[1][1]["strMeal"]%></h1>
+  <p><%= letterlist[1][1]["strInstructions"]%></p>
+  <%= image_tag letterlist[1][1]["strMealThumb"]+"/preview"%>
+
+  <h1><%= letterlist[1][0]["strMeal"]%></h1>
+  <p><%= letterlist[1][0]["strInstructions"]%></p>
+  <%= image_tag letterlist[1][0]["strMealThumb"]+"/preview"%>
+
+  <% if letterlist[1].count > 3 %>
+    <h1><%= letterlist[1][3]["strMeal"]%></h1>
+    <p><%= letterlist[1][3]["strInstructions"]%></p>
+    <%= image_tag letterlist[1][3]["strMealThumb"]+"/preview"%>
+  <% end %>
 <% end %>
