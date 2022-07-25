@@ -1,6 +1,10 @@
 class MealsController < ApplicationController
-  def index
-    client = Meal::Api::Client.new
-    @random_meals = client.random_meals
+  def about
+  end
+
+  def download
+  end
+
+  def contact
   end
 end
