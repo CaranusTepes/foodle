@@ -249,3 +249,93 @@ body {
   font-size: 1rem;
   font-family: 'Bree Serif', serif;
 }
+
+.individual_meal {
+  margin: 20px;
+}
+
+.meal_details {
+  display: flex;
+  flex-direction: row;
+}
+
+.meal_details_text {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  font-size: 1rem;
+  font-family: 'Bree Serif', serif;
+}
+
+.meal_details_name {
+  font-size: 5rem;
+  padding: 10px;
+}
+
+.meal_details_category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  width: 5rem;
+  border-radius: 20px;
+}
+
+.meal_more_details {
+  padding: 10px;
+}
+
+.meal_details_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.meal_details_image_spec {
+  width: 400px;
+}
+
+.meal_other_details {
+  display: flex;
+  flex-direction: row;
+}
+
+.ing_table {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 70%;
+  border: 2px dotted black;
+  height: 300px;
+  word-wrap: normal;
+}
+
+.ing_names {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ing_title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: 'Bree Serif', serif;
+}
+
+.ing_name {
+  font-size: 1.3rem;
+  font-family: 'Bree Serif', serif;
+}
+
+.ing_vid {
+  padding: 10px;
+}
+
+.food-ref-store {
+  display: flex;
+  justify-content: center;
+}

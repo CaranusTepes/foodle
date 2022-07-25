@@ -1,4 +1,4 @@
-<div>
+<div class="individual_meal">
   <% @meal_details.each do |details| %>
   <div class="meal_details">
     <div class="meal_details_text">
@@ -6,27 +6,36 @@
       <div class="meal_details_category"><%= details[1][0]["strCategory"] %></div>
       <div class="meal_more_details"><%= details[1][0]["strInstructions"] %></div>
     </div>
-    <div class="meal_details_image"><%= image_tag details[1][0]["strMealThumb"]+"/preview" %></div>
+    <div class="meal_details_image"><%= image_tag details[1][0]["strMealThumb"]+"/preview", :class => "meal_details_image_spec" %></div>
   </div>
-  <div class="">
-    <div>
-      <table>
-        <tr>
-          <th>Ingredient</th>
-          <th>Counts</th>
-        </tr>
-        <tr>
-          <td><%= details[1][0]["strIngredient1"] %></td>
-          <td><%= details[1][0]["strMeasure1"] %></td>
-        </tr>
-        <tr>
-          <td><%= details[1][0]["strIngredient2"] %></td>
-          <td><%= details[1][0]["strMeasure2"] %></td>
-        </tr>
-      </table>
+  <div class="meal_other_details">
+    <div class="ing_table">
+      <div class="ing_title">Ingredients</div>
+      <div class="ing_names">
+        <ul class="ing_name"><%= details[1][0]["strMeasure1"]+ " " + details[1][0]["strIngredient1"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure2"]+ " " + details[1][0]["strIngredient2"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure3"]+ " " + details[1][0]["strIngredient3"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure4"]+ " " + details[1][0]["strIngredient4"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure5"]+ " " + details[1][0]["strIngredient5"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure6"]+ " " + details[1][0]["strIngredient6"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure7"]+ " " + details[1][0]["strIngredient7"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure8"]+ " " + details[1][0]["strIngredient8"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure9"]+ " " + details[1][0]["strIngredient9"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure10"]+ " " + details[1][0]["strIngredient10"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure11"]+ " " + details[1][0]["strIngredient11"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure12"]+ " " + details[1][0]["strIngredient12"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure13"]+ " " + details[1][0]["strIngredient13"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure14"]+ " " + details[1][0]["strIngredient14"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure15"]+ " " + details[1][0]["strIngredient15"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure16"]+ " " + details[1][0]["strIngredient16"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure17"]+ " " + details[1][0]["strIngredient17"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure18"]+ " " + details[1][0]["strIngredient18"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure19"]+ " " + details[1][0]["strIngredient19"] %></ul>
+        <ul class="ing_name"><%= details[1][0]["strMeasure20"]+ " " + details[1][0]["strIngredient20"] %></ul>
+      </div>
     </div>
-    <div>
-      <iframe src='https://www.youtube.com/embed/<%=@youtube%>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+    <div class="ing_vid">
+      <iframe width="500px" height="300px" src='https://www.youtube.com/embed/<%=@youtube%>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
     </div>
   </div>
   <% end %>
