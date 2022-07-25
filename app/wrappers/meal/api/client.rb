@@ -2,10 +2,6 @@ module Meal
   module Api
     class Client
       BASE_URL = "https://www.themealdb.com".freeze
-      
-      def letter_list(letter)
-        send_request(:get, "/api/json/v2/9973533/search.php?f=#{letter}")
-      end
 
       def category_list
         send_request(:get, "/api/json/v2/9973533/categories.php")

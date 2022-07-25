@@ -1,5 +1,5 @@
 class MealDetailsController < ApplicationController
-  def index
+  def category
     client = Meal::Api::Client.new
     @category_list = client.category_list
     @category_list.each do |category|
@@ -7,6 +7,8 @@ class MealDetailsController < ApplicationController
     end
   end 
   
-  def show
+  def details
+    client = Meal::Api::Client.new
+    @meal_details= client.meal_details(params[:id])
   end
 end
