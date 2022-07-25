@@ -1,55 +1,46 @@
- <div class="header" > 
-  <div> Foodle </div>
-  <div class="navigation">
-    <div> Home </div>
-    <div><%= link_to 'About', about_path%></div>
-    <div><%= link_to 'Recipes', meal_details_path%></div>
-    <div><%= link_to 'Download', download_path%></div>
-    <div><%= link_to 'Contact', contact_path%></div>
-  </div>
-  <input type="text" placeholder="Search..">
-</div>
 <div class="body">
   <div class="section_one">
     <h1 class="section_header"> Let's Start Cooking With Popular Recipes</h1>
     <div class="section_body"> Do you want to learn to cook but confused how to start? Now need to worry again!</div>
     <div class="section_one_buttons">
-      <button> Get Started </button>
-      <button> Explore Menu </button>
+      <a href="/download" class="button"> Get Started </a>
+      <a href="/categories" class="button"> Explore Menu</a>
     </div>
   </div>
-  <div class="food_reference"></div>
+  <div class="food_reference"><%= image_tag 'food-ref.png' %></div>
 </div>
 <div class="food">
-  <h2 class="food_header">Popular Food</h2>
-  <div> We provide a variety of food recipees with approval from the famous chefs </div>
+  <div class="food_header">Popular Food</div>
+  <div class="food_header_desc"> We provide a variety of food recipees with approval from the famous chefs </div>
   <div class="popular_foods_list">
     <% @randoms.each do |random| %>
       <div class="popular_foods">
-        <%= random[1][0]["strMeal"]%>
+        <%= link_to random[1][0]["strMeal"], meal_details_path(:id => random[1][0]["idMeal"]), :class => "popular_foods_title" %>
         <%= image_tag random[1][0]["strMealThumb"]+"/preview", :class => "popular_foods_image"%>
       </div>
       <div class="popular_foods">
-        <%= random[1][1]["strMeal"]%>
+        <%= link_to random[1][1]["strMeal"], meal_details_path(:id => random[1][1]["idMeal"]), :class => "popular_foods_title"  %>
         <%= image_tag random[1][1]["strMealThumb"]+"/preview", :class => "popular_foods_image"%>
       </div>
       <div class="popular_foods">
-        <%= random[1][2]["strMeal"]%>
+        <%= link_to random[1][2]["strMeal"], meal_details_path(:id => random[1][2]["idMeal"]), :class => "popular_foods_title"  %>
         <%= image_tag random[1][2]["strMealThumb"]+"/preview", :class => "popular_foods_image"%>
       </div>
       <div class="popular_foods">
-        <%= random[1][3]["strMeal"]%>
+        <%= link_to random[1][3]["strMeal"], meal_details_path(:id => random[1][3]["idMeal"]), :class => "popular_foods_title"  %>
         <%= image_tag random[1][3]["strMealThumb"]+"/preview", :class => "popular_foods_image"%>
       </div>
       <div class="popular_foods">
-        <%= random[1][4]["strMeal"]%>
+        <%= link_to random[1][4]["strMeal"], meal_details_path(:id => random[1][4]["idMeal"]), :class => "popular_foods_title"  %>
         <%= image_tag random[1][4]["strMealThumb"]+"/preview", :class => "popular_foods_image"%>
       </div>
     <% end %>
   </div>
 </div>
-<div class="footer">
-  <div class="sub_header">Subscribe to get weekly recipe updates</div>
-  <input type="text" placeholder="Email">
-  <button class="sub_button">Subscribe</button>
+<div class="main_footer">
+  <div class="footer">
+    <div class="sub_header">Subscribe to get weekly recipe updates</div>
+    <input type="text" placeholder="Email" class="email">
+    <button class="sub_button">Subscribe</button>
+  </div>
 </div>

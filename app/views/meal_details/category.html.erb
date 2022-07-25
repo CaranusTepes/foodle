@@ -1,9 +1,11 @@
-<div>
+<div class="list_category">
   <% @categoryList.each do |category| %>
-    <div class="">
-      <%= category["strCategory"] %>
-      <%= category["strCategoryDescription"] %>
-      <%= image_tag category["strCategoryThumb"]%>
+    <div class="category_card">
+      <div class="category_card_details">
+        <%= link_to category["strCategory"], category_meals_path(:category => category["strCategory"]), :class => "category_card_title" %>
+        <div class="category_card_desc"><%= category["strCategoryDescription"]%></div>
+      </div> 
+      <div><%= image_tag category["strCategoryThumb"], :class => "category_card_image"%></div>
     </div>
   <% end %>
 </div>

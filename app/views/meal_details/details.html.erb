@@ -1,7 +1,33 @@
 <div>
   <% @meal_details.each do |details| %>
-    <div class="">
-      <%= details[1][0]["strMeal"] %>
+  <div class="meal_details">
+    <div class="meal_details_text">
+      <div class="meal_details_name"><%= details[1][0]["strMeal"] %></div>
+      <div class="meal_details_category"><%= details[1][0]["strCategory"] %></div>
+      <div class="meal_more_details"><%= details[1][0]["strInstructions"] %></div>
     </div>
+    <div class="meal_details_image"><%= image_tag details[1][0]["strMealThumb"]+"/preview" %></div>
+  </div>
+  <div class="">
+    <div>
+      <table>
+        <tr>
+          <th>Ingredient</th>
+          <th>Counts</th>
+        </tr>
+        <tr>
+          <td><%= details[1][0]["strIngredient1"] %></td>
+          <td><%= details[1][0]["strMeasure1"] %></td>
+        </tr>
+        <tr>
+          <td><%= details[1][0]["strIngredient2"] %></td>
+          <td><%= details[1][0]["strMeasure2"] %></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <iframe src='https://www.youtube.com/embed/<%=@youtube%>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+    </div>
+  </div>
   <% end %>
 </div>

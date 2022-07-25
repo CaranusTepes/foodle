@@ -1,0 +1,8 @@
+<div class="food_category_list">
+  <% @categoryDetails.each do |cateDetails| %>
+    <div class="food_category">
+      <div class="food_category_name"><%= link_to cateDetails["strMeal"], meal_details_path(:id => cateDetails["idMeal"]) %></div>
+      <%= link_to image_tag(cateDetails["strMealThumb"], :class => "category_card_image"), meal_details_path(:id => cateDetails["idMeal"])%>
+    </div>
+  <% end %>
+</div>
